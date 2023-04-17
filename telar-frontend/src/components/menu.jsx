@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/menu.scss";
 
 export function Menu() {
 
@@ -10,8 +11,8 @@ export function Menu() {
     }
 
     return (
-        <div>
-            <button onClick={navigateToHome}>Home</button>
+        <div className="menu">
+            <button className="homeButton" onClick={navigateToHome}>Home</button>
         </div>
     )
 }

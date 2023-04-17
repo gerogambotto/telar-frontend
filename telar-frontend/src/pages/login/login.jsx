@@ -28,9 +28,9 @@ export function Login() {
       if (!isValidEmail(userMail.value)) {
         setError("Email is invalid");
       } else if (userPassword.value == "") {
-        setError("Password is Empty");
+        setError("Incorrect Password");
       } else if (userPassword.value.length < 5) {
-        setError("Please enter a correct Password");
+        setError("Incorrect Password");
       } else {
         console.log("Submited");
         setError(null);
@@ -46,7 +46,7 @@ export function Login() {
         <div>
           <Menu />
         </div>
-      <div className="form-body">
+      <div className="form-body-login">
         <form onSubmit={handleSubmit}>            
           <div>
             <input
@@ -71,8 +71,8 @@ export function Login() {
           </div>
           
           <div>
-            <button>Login</button>
-            {error && <h5 style={{ color: "red" }}>{error}</h5>}
+            <button className="login-button">Login</button>
+            {error && <h5 style={{ color: "red", fontFamily:"system-ui" }}>{error}</h5>}
           </div>
         </form>
       </div>

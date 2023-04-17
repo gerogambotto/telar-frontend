@@ -28,17 +28,17 @@ export function Register() {
     setError(null);
 
     if (userName.value == "") {
-      setError("Name is Empty");
+      setError("Incorrect name");
     } else if (userLastName.value == "") {
-      setError("Last Name is Empty");
+      setError("Incorrect last name");
     } else if (!isValidEmail(userMail.value)) {
-      setError("Email is invalid");
+      setError("Incorrect e-mail");
     } else if (userPassword.value == "") {
-      setError("Password is Empty");
+      setError("Incorrect password");
     } else if (userPassword.value.length < 5) {
-      setError("Please enter a correct Password");
+      setError("Incorrect password");
     } else if (userConfirmPassword.value == "") {
-      setError("Confirm Password is Empty");
+      setError("Passwords don t match");
     } else if (userPassword.value != userConfirmPassword.value) {
       setError("Passwords don t match");
     } else {
@@ -56,7 +56,7 @@ export function Register() {
       <div>
         <Menu />
       </div>
-    <div className="form-body">
+    <div className="form-body-register">
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -110,7 +110,7 @@ export function Register() {
           />
         </div>
         <div>
-          <button>Register</button>
+          <button className="register-button">Register</button>
           {error && <h5 style={{ color: "red" }}>{error}</h5>}
         </div>
       </form>

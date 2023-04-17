@@ -1,5 +1,27 @@
 @import '../../styles/variables.scss';
 
 body{
-    background: $primaryColor;
+    background: $backgroundColor;
+
+}
+
+.form-body-login {
+    display: grid;
+    place-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+
+.login-button{
+    cursor: pointer;
+    transition-duration: 0.4s;
+    background-color: $primaryColor;
+    border-radius: 999px;
+    width: 100%;
+    border: none;
+}
+
+.login-button:hover{
+    background-color: $secondaryColor; 
+    color: $white;
 }
