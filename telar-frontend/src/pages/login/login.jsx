@@ -52,7 +52,7 @@ export function Login() {
 
     if (!isValidEmail(userMail.value)) {
       setError("Email is invalid");
-    } else if (userPassword.value == "") {
+    } else if (userPassword.value === "") {
       setError("Incorrect Password");
     } else if (userPassword.value.length < 5) {
       setError("Incorrect Password");
