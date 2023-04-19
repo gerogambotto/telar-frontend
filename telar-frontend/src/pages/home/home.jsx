@@ -7,7 +7,7 @@ export function Home() {
     return <>
         <Layout>
             <section className="home-section container-fluid">
-                asd
+                
             </section>
         </Layout>
     </>
