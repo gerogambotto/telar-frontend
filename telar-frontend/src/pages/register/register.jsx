@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Layout} from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
 export function Register() {
@@ -51,6 +52,8 @@ export function Register() {
   }
 
   return (
+    <Layout>
+    <section className="container-fluid register-section"> 
     <div className="form-body-register">
       <form onSubmit={handleSubmit}>
         <div>
@@ -110,5 +113,7 @@ export function Register() {
         </div>
       </form>
     </div>
+    </section>
+    </Layout>
   );
 }
