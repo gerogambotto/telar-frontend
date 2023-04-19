@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import {Layout} from "../../components/Layout/Layout.jsx";
 import "./style.scss";
-import { Loginregister } from "../../components/LoginRegister/loginregister.jsx";
 
 export function Home() {
 
-    return (
-        <Loginregister />
-    )
+    return <>
+        <Layout>
+            <section className="home-section container-fluid">
+                asd
+            </section>
+        </Layout>
+    </>
     
 }

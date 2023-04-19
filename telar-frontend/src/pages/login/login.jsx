@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import "./style.scss";
-import {Menu} from "../../components/menu.jsx"
 import axios from "axios";
+import {Layout} from "../../components/Layout/Layout.jsx";
+import "./style.scss";
+
 
 export function Login() {
 
@@ -27,7 +28,6 @@ export function Login() {
     }
   }, [])
 
-
   const useField = ({ type }) => {
     const [value, setValue] = useState("");
     const onChange = (event) => {
@@ -39,7 +39,6 @@ export function Login() {
       onChange,
     };
   };
-
 
   const userMail = useField({ type: "text" });
   const userPassword = useField({ type: "password" });
@@ -57,7 +56,6 @@ export function Login() {
     } else if (userPassword.value.length < 5) {
       setError("Incorrect Password");
     } else {
-      console.log("Submited");
       setError(null);
     }
   };
@@ -67,15 +65,10 @@ export function Login() {
   }
 
   return (
-    <div>
-      <div>
-        <Menu />
-      </div>
-
-      {
-        userIsLoged
-          ?
-          <div className="form-body-login">
+    <Layout>
+      <section className="container-fluid login-section">
+        {userIsLoged
+          ? <div className="form-body-login">
             <form onSubmit={handleSubmit}>
               <div>
                 <input
@@ -105,10 +98,10 @@ export function Login() {
               </div>
             </form>
           </div>
-          :
-          <>Esta logueado</>
-      }
-  </div>
+          : <>Esta logueado</>
+        }
+      </section>
+    </Layout>
   );
   
-  }
+}

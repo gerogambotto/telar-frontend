@@ -1,8 +1,8 @@
 @import '../../styles/variables.scss';
 
-body{
-    background: $backgroundColor;
-
+.login-section{
+    min-height: 72vh;
+    background-color: $backgroundColor;
 }
 
 .form-body-login {
@@ -23,5 +23,5 @@ body{
 
 .login-button:hover{
     background-color: $secondaryColor; 
-    color: $white;
+    color: white;
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./style.scss";
-import {Menu} from "../../components/menu.jsx"
 
 export function Register() {
   const useField = ({ type }) => {
@@ -27,19 +26,19 @@ export function Register() {
     event.preventDefault();
     setError(null);
 
-    if (userName.value == "") {
+    if (userName.value === "") {
       setError("Incorrect name");
-    } else if (userLastName.value == "") {
+    } else if (userLastName.value === "") {
       setError("Incorrect last name");
     } else if (!isValidEmail(userMail.value)) {
       setError("Incorrect e-mail");
-    } else if (userPassword.value == "") {
+    } else if (userPassword.value === "") {
       setError("Incorrect password");
     } else if (userPassword.value.length < 5) {
       setError("Incorrect password");
-    } else if (userConfirmPassword.value == "") {
+    } else if (userConfirmPassword.value === "") {
       setError("Passwords don t match");
-    } else if (userPassword.value != userConfirmPassword.value) {
+    } else if (userPassword.value !== userConfirmPassword.value) {
       setError("Passwords don t match");
     } else {
       console.log("Submited");
@@ -52,10 +51,6 @@ export function Register() {
   }
 
   return (
-    <div>
-      <div>
-        <Menu />
-      </div>
     <div className="form-body-register">
       <form onSubmit={handleSubmit}>
         <div>
@@ -115,6 +110,5 @@ export function Register() {
         </div>
       </form>
     </div>
-  </div>
   );
 }

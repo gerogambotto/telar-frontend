@@ -1,39 +1,41 @@
 @import '../../styles/variables';
 
-
-.menu {
-  display:flex;
-  align-items: center;
+.navbar{
   background-color: $primaryColor;
-  justify-content: left;
-}
 
-.homeButton {
-  cursor: pointer;
-  padding: 6px 16px;
-  background-color: $primaryColor;
-  border: none;
-}
-.homeButton:hover{
-  background-color: $secondaryColor;
-  color: $white;
-}
+  .menu {
+    display:flex;
+    align-items: center;
+    justify-content: left;
+  }
 
-.loginregister {
-  display:flex;
-  align-items: center;
-  background-color: $primaryColor;
-  justify-content: flex-end;
-}
+  .homeButton {
+    cursor: pointer;
+    padding: 6px 16px;
+    background-color: $primaryColor;
+    border: none;
+  }
+  .homeButton:hover{
+    background-color: $secondaryColor;
+    color: white;
+  }
 
-.login-register-button{
-  cursor: pointer;
-  padding: 6px 16px;
-  background-color: $primaryColor;
-  border: none;
-}
+  .loginregister {
+    display:flex;
+    align-items: center;
+    background-color: $primaryColor;
+    justify-content: flex-end;
+  }
 
-.login-register-button:hover{
-  background-color: $secondaryColor;
-  color: $white;
+  .login-register-button{
+    cursor: pointer;
+    padding: 6px 16px;
+    background-color: $primaryColor;
+    border: none;
+  }
+
+  .login-register-button:hover{
+    background-color: $secondaryColor;
+    color: white;
+  }
 }
