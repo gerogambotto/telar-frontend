@@ -1,13 +1,8 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import {Layout} from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
-
 export function Login() {
-
-
-
   const useField = ({ type }) => {
     const [value, setValue] = useState("");
     const onChange = (event) => {
@@ -80,5 +75,4 @@ export function Login() {
       </section>
     </Layout>
   );
-  
 }
