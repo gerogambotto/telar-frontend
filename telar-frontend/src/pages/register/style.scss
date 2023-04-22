@@ -1,8 +1,9 @@
 @import '../../styles/variables.scss';
 
 .register-section{
-    min-height: 72vh;
+    min-height: 80vh;
     background-color: $backgroundColor;
+    height: 100vh;
 }
 
 
@@ -11,8 +12,9 @@
     display: grid;
     place-content: center;
     align-items: center;
-    margin-top: 20%;
+    height: 100%;
 }
+
 
 .register-button{
     cursor: pointer;

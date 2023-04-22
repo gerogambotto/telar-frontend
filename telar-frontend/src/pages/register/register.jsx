@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Layout} from "../../components/Layout/Layout.jsx";
+import { Layout } from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
 export function Register() {
@@ -53,67 +53,67 @@ export function Register() {
 
   return (
     <Layout>
-    <section className="container-fluid register-section"> 
-    <div className="form-body-register">
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            {...userName}
-            name="username"
-            placeholder="First name"
-            type={userName.type}
-            value={userName.value}
-            onChange={userName.onChange}
-          />
-        </div>
-        <div>
-          <input
-            {...userLastName}
-            name="userLastName"
-            placeholder="Last name"
-            type={userLastName.type}
-            value={userLastName.value}
-            onChange={userLastName.onChange}
-          />
-        </div>
-        <div>
-          <input
-            {...userMail}
-            name="userMail"
-            placeholder="Email"
-            type={userMail.type}
-            value={userMail.value}
-            onChange={userMail.onChange}
-          />
-        </div>
+      <section className="container-fluid register-section">
+        <div className="form-body-register">
+          <form className="form-register" onSubmit={handleSubmit}>
+            <div>
+              <input
+                {...userName}
+                name="username"
+                placeholder="First name"
+                type={userName.type}
+                value={userName.value}
+                onChange={userName.onChange}
+              />
+            </div>
+            <div>
+              <input
+                {...userLastName}
+                name="userLastName"
+                placeholder="Last name"
+                type={userLastName.type}
+                value={userLastName.value}
+                onChange={userLastName.onChange}
+              />
+            </div>
+            <div>
+              <input
+                {...userMail}
+                name="userMail"
+                placeholder="Email"
+                type={userMail.type}
+                value={userMail.value}
+                onChange={userMail.onChange}
+              />
+            </div>
 
-        <div>
-          <input
-            {...userPassword}
-            name="Password"
-            placeholder="Password"
-            type={userPassword.type}
-            value={userPassword.value}
-            onChange={userPassword.onChange}
-          />
+            <div>
+              <input
+                {...userPassword}
+                name="Password"
+                placeholder="Password"
+                type={userPassword.type}
+                value={userPassword.value}
+                onChange={userPassword.onChange}
+              />
+            </div>
+            <div>
+              <input
+                {...userConfirmPassword}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                type={userConfirmPassword.type}
+                value={userConfirmPassword.value}
+                onChange={userConfirmPassword.onChange}
+              />
+            </div>
+            <div>
+              <button className="register-button">Register</button>
+              {error && <h5 style={{ color: "red" }}>{error}</h5>}
+            </div>
+          </form>
         </div>
-        <div>
-          <input
-            {...userConfirmPassword}
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            type={userConfirmPassword.type}
-            value={userConfirmPassword.value}
-            onChange={userConfirmPassword.onChange}
-          />
-        </div>
-        <div>
-          <button className="register-button">Register</button>
-          {error && <h5 style={{ color: "red" }}>{error}</h5>}
-        </div>
-      </form>
-    </div>
-    </section>
+      </section>
     </Layout>
   );
 }

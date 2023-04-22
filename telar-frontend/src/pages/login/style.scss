@@ -1,15 +1,17 @@
 @import '../../styles/variables.scss';
 
+
 .login-section{
-    min-height: 72vh;
+    min-height: 80vh;
     background-color: $backgroundColor;
+    height: 100vh;
 }
 
 .form-body-login {
     display: grid;
     place-content: center;
     align-items: center;
-    margin-top: 25%;
+    height: 100%;
 }
 
 .login-button{
