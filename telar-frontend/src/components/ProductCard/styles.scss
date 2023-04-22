@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+
+    
+
+.product-card{
+    width: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    display: inline-block;
+    margin: 5%;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.product-card:hover {
+ transform: scale(1.1);
+ 
+}
+
+.title-product{
+    padding:10px;
+    margin-bottom: 10px;
+    min-height: 15px;
+}
+
+img{
+  width: 100px;
+  height: 100px;  
+}

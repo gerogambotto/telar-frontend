@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Layout} from "../../components/Layout/Layout.jsx";
+import React, { useEffect, useState } from "react";
+import { Layout } from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
 export function Login() {
@@ -43,7 +43,7 @@ export function Login() {
     <Layout>
       <section className="container-fluid login-section">
         <div className="form-body-login">
-          <form onSubmit={handleSubmit}>
+          <form className="form-login" onSubmit={handleSubmit}>
             <div>
               <input
                 {...userMail}
@@ -68,7 +68,11 @@ export function Login() {
 
             <div>
               <button className="login-button">Login</button>
-              {error && <h5 style={{ color: "red", fontFamily:"system-ui" }}>{error}</h5>}
+              {error && (
+                <h5 style={{ color: "red", fontFamily: "system-ui" }}>
+                  {error}
+                </h5>
+              )}
             </div>
           </form>
         </div>
