@@ -1,10 +1,9 @@
-import './styles.scss'
-
+import "./styles.scss";
 
 export const Footer = () => {
-
-  return(
+  return (
     <footer>
+      <h1>Footer</h1>
     </footer>
-  )
-}
+  );
+};
