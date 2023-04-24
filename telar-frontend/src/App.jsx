@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {Route, Routes} from 'react-router-dom'
 import {Register} from './pages/register/register.jsx'
 import {Login} from './pages/login/login.jsx'

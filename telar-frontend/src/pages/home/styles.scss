@@ -2,20 +2,4 @@
 
 .home-section{
     background: $backgroundColor;
-  //  min-height: 150vh;
-}
-
-.nextpagebutton{
-  cursor: pointer;
-  transition-duration: 0.4s;
-  background-color: $primaryColor;
-  border-radius: 999px;
-  width: 400px;
-  border: none;
-  margin:0 auto;
-  display:block;
-} 
-.nextpagebutton:hover{
-  background-color: $secondaryColor; 
-  color: white;
 }
