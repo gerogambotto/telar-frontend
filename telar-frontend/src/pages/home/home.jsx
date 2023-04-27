@@ -5,12 +5,11 @@ import { products } from "../../products.json";
 import "./styles.scss";
 
 export function Home() {
-
   return (
     <Layout>
       <section className="home-section mt-5">
-        <div className='container'>
-          <div className='row justify-content-center'>
+        <div className="container">
+          <div className="row justify-content-center">
             {products?.map((product) => {
               return <ProductCard key={product.id} product={product} />;
             })}

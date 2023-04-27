@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.logo{
+    width: 60px;
+    height: 60px;
+  }
+  
+  .menu {
+    display:flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .homeButton {
+    cursor: pointer;
+    padding: 6px 16px;
+    margin-left: 60px;
+    background-color: white;
+    border: none;
+  }
+  .homeButton:hover{
+    color: white;
+  }

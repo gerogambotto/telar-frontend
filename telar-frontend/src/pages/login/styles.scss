@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+
+.login-section{
+    min-height: 80vh;
+    background-color: $backgroundColor;
+    height: 100vh;
+}
+
+.form-body-login {
+    display: grid;
+    place-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-button{
+    cursor: pointer;
+    transition-duration: 0.4s;
+    background-color: $primaryColor;
+    border-radius: 999px;
+    width: 100%;
+    border: none;
+}
+
+.login-button:hover{
+    background-color: $secondaryColor; 
+    color: white;
+}
