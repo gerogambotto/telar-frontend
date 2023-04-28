@@ -53,30 +53,36 @@ export function Register() {
 
   return (
     <Layout>
-      <section className="container-fluid register-section">
+      <section className="">
         <div className="form-body-register">
           <form className="form-register" onSubmit={handleSubmit}>
+          <div className="title">Registration</div>
             <div>
-              <input
-                {...userName}
-                name="username"
-                placeholder="First name"
-                type={userName.type}
-                value={userName.value}
-                onChange={userName.onChange}
-              />
+              <div className="input__box">
+                <input
+                  {...userName}
+                  name="username"
+                  placeholder="First name"
+                  type={userName.type}
+                  value={userName.value}
+                  onChange={userName.onChange}
+                />
+              </div>
             </div>
             <div>
-              <input
-                {...userLastName}
-                name="userLastName"
-                placeholder="Last name"
-                type={userLastName.type}
-                value={userLastName.value}
-                onChange={userLastName.onChange}
-              />
+              <div className="input__box">
+                <input
+                  {...userLastName}
+                  name="userLastName"
+                  placeholder="Last name"
+                  type={userLastName.type}
+                  value={userLastName.value}
+                  onChange={userLastName.onChange}
+                />
+              </div>
             </div>
-            <div>
+            
+            <div className="input__box">
               <input
                 {...userMail}
                 name="userMail"
@@ -87,7 +93,7 @@ export function Register() {
               />
             </div>
 
-            <div>
+            <div className="input__box">
               <input
                 {...userPassword}
                 name="Password"
@@ -97,7 +103,8 @@ export function Register() {
                 onChange={userPassword.onChange}
               />
             </div>
-            <div>
+
+            <div className="input__box">
               <input
                 {...userConfirmPassword}
                 name="confirmPassword"
