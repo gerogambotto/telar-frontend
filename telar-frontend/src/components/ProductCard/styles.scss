@@ -1,5 +1,5 @@
 @import "../../styles/variables.scss";
-
+$greendefault: #279d2e;
 .product-card {
   width: 100%;
   max-width: 300px;
@@ -32,6 +32,9 @@
 
   .title-product {
     font-size: 22px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #3c3c3b;
     margin: 1rem 0;
     text-transform: capitalize;
     height: 70px;
@@ -39,6 +42,9 @@
 
   .price-product {
     font-size: 28px;
+    font-weight: 700;
+    line-height: 28px;
+    color: $greendefault;
     font-weight: 500;
   }
 

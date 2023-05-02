@@ -1,18 +1,30 @@
 import React from "react";
 import "./styles.scss";
+import { useEffect } from "react";
 
 function InputSearch({ setInputValue, value }) {
+  const handleChange = (event) =>{
+      const inputValue = event.target.value;
+      return setInputValue(inputValue);
+      console.log(inputValue);
+  }
+  const searchProducts = () => {
+    fetch(`https://dummyjson.com/products/search?q=${value}`)
+      .then((res) => res.json())
+      .then(console.log)
+  };
+
+  useEffect(() => {
+    searchProducts()
+    
+  }, []);   
   return (
     <form className="form">
       <input
         type="text"
-        onChange={(event) => {
-          const inputValue = event.target.value;
-          console.log(inputValue);
-          setInputValue(inputValue);
-        }}
+        onChange={handleChange}
         value={value}
-        placeholder="search"
+        placeholder="Search"
       />
       <button>
         <svg viewBox="0 0 1024 1024">
