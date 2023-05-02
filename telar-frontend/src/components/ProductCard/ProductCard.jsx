@@ -6,7 +6,7 @@ export const ProductCard = ({ product }) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="col-md-3  mb-5">
+    <div className="col-md-3">
       <div className="product-card">
         <div>
           <Image

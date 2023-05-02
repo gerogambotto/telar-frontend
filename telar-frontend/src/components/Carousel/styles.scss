@@ -15,7 +15,6 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    padding: 45px;
 }
 
 .carousel-content {
@@ -23,6 +22,7 @@
     transition: all 250ms linear;
     -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* hide scrollbar in Firefox */
+    margin: 4rem 0;
 }
 
 /* hide scrollbar in webkit browser */
