@@ -41,10 +41,12 @@ export function Login() {
 
   return (
     <Layout>
-      <section className="container-fluid login-section">
+      <section className="">
         <div className="form-body-login">
           <form className="form-login" onSubmit={handleSubmit}>
+          <div className="title">Login</div>
             <div>
+            <div className="input__box">
               <input
                 {...userMail}
                 name="userMail"
@@ -54,8 +56,10 @@ export function Login() {
                 onChange={userMail.onChange}
               />
             </div>
+            </div>
 
             <div>
+            <div className="input__box">
               <input
                 {...userPassword}
                 name="Password"
@@ -65,7 +69,7 @@ export function Login() {
                 onChange={userPassword.onChange}
               />
             </div>
-
+</div>
             <div>
               <button className="login-button">Login</button>
               {error && (
