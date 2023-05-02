@@ -1,33 +1,19 @@
 import "./styles.scss";
 import React, { useState } from "react";
-import { Image } from "antd";
 
 export const ProductCard = ({ product }) => {
-  const [visible, setVisible] = useState(false);
 
   return (
     <div className="col-md-3">
       <div className="product-card">
-        <div>
-          <Image
-            preview={{ visible: false }}
-            src={product.thumbnail}
-            onClick={() => setVisible(true)}
-            alt={product.title}
-            className="image"
-          />
-          <div style={{ display: "none" }}>
-            <Image.PreviewGroup
-              preview={{ visible, onVisibleChange: (vis) => setVisible(vis) }}
-            >
-              <Image src={product.thumbnail} />
-              <Image src={product.thumbnail} />
-              <Image src={product.thumbnail} />
-            </Image.PreviewGroup>
-          </div>
+      <a style={{ color: "#fff" }} className="" href={`/product/${product.id}`}>
+        <div className="img">
+          <img  className="img" src={product.thumbnail} alt={product.title} />
           <p className="title-product">{product.title}</p>
           <p className="price-product align-self-end">US${product.price}</p>
+          <p className="cuotas">6  cuotas sin interés $ {Math.round(product.price /6)}</p>
         </div>
+        </a>
       </div>
     </div>
   );
