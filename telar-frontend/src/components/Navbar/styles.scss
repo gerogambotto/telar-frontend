@@ -1,25 +1,8 @@
 @import '../../styles/variables';
 
 .navbar{
-  background-color: $primaryColor;
-
-  .menu {
-    display:flex;
-    align-items: center;
-    justify-content: left;
-  }
-
-  .homeButton {
-    cursor: pointer;
-    padding: 6px 16px;
-    background-color: $primaryColor;
-    border: none;
-  }
-  .homeButton:hover{
-    background-color: $secondaryColor;
-    color: white;
-  }
-
+  background-color: white; 
+  
   .loginregister {
     display:flex;
     align-items: center;
@@ -30,12 +13,12 @@
   .login-register-button{
     cursor: pointer;
     padding: 6px 16px;
-    background-color: $primaryColor;
+    background-color: white;
     border: none;
   }
 
   .login-register-button:hover{
-    background-color: $secondaryColor;
-    color: white;
+    background-color: $primaryColor;
   }
 }
+

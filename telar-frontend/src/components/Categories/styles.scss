@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+.categories{
+    margin: 0;
+    background: white;
+    height: 35px;
+    .category{
+      cursor: pointer;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    a{
+      padding:  0 20px 0 20px;
+      border-left: 1px solid $primaryColor;
+    }
+    
+  }
+  .category:hover {
+    border-bottom: 1px solid $primaryColor;
+  }

@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+.smartphones{
+    
+    height: auto;
+}
+    .title {
+    margin-left: 10%;   
+    margin-bottom: 25px;
+    
+    .view {
+        cursor: pointer;
+        margin-left: 10px;
+        
+    }
+    }
