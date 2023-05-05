@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
-import { ProductCard } from "../../components/ProductCard/ProductCard.jsx";
-import { products } from "../../products.json";
+import { Technology } from "../../components/Technology/Technology.jsx";
+import { Fragances } from "../../components/Fragances/Fragances.jsx";
+import { House } from "../../components/House/House.jsx";
 import "./styles.scss";
 
 export function Home() {
   return (
     <Layout>
       <section className="home-section mt-5">
-        <div className="container">
-          <div className="row justify-content-center">
-            {products?.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
-            })}
-          </div>
-        </div>
+        <Technology />
+        <Fragances />
+        <House />
       </section>
     </Layout>
   );

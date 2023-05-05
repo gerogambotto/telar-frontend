@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export const ProductCard = ({ product }) => {
 
   return (
-    <div className="col-md-4 mb-5">
+    <div className="col-md-3">
       <div className="product-card">
       <a style={{ color: "#fff" }} className="" href={`/product/${product.id}`}>
         <div className="img">
