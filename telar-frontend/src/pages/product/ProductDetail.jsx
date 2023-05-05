@@ -1,21 +1,10 @@
+import "./styles.scss"
 import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
-import s from "./styles.scss";
 import { useParams } from "react-router";
 import products from "../../products.json";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  ButtonFirst,
-  ButtonLast,
-  DotGroup,
-  ImageWithZoom,
-} from "pure-react-carousel";
 import visa from "./visa.svg";
 import mastercard from "./mastercard.svg";
 
@@ -31,6 +20,7 @@ export function ProductDetail() {
 
   useEffect(() => {
     getProduct();
+    
   }, []);
 
   return (

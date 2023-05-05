@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
-import axios from "axios";
 import InputSearch from "../Search/imputSearch.jsx";
 import HomeButton from "../HomeButton/HomeButton.jsx";
 import Categories from "../Categories/Categories.jsx";
@@ -14,12 +13,23 @@ export const Navbar = () => {
   const navigateToRegister = () => navigate("/register");
 
   const [userIsLoged, setUserIsLoged] = useState(false);
+  const [categories, setCategories] = useState(null);
 
   const logOut = () => {
     localStorage.removeItem("token");
     setUserIsLoged(!userIsLoged);
   };
 
+  const fetchCategories = async () => {
+    const products = await fetch("https://dummyjson.com/products/categories");
+    const data = await products.json();
+    setCategories(data);
+  }
+  useEffect(() => {
+    fetchCategories();
+    
+  }, []);
+  
   const getUserIsLoged = async () => {
     const body = {
       username: "kminchelle",
@@ -81,7 +91,7 @@ export const Navbar = () => {
           )}
         </div>
       </div>
-      <Categories />
+      <Categories categories={categories} />
     </div>
   );
 };
