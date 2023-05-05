@@ -1,17 +1,10 @@
-import React from "react";
 import "./styles.scss";
 
-function Categories() {
-  return (
-    <div className="row justify-content-center categories">
-      <a className="border-left-0 category">Technology</a>
-      <a className="category">Fragances</a>
-      <a className="category">House</a>
-      <a className="category">Clothes</a>
-      <a className="category">Vehicles</a>
-      <a className="category">Films</a>
-    </div>
-  );
+function Categories({ categories }) {
+
+  return categories?.map((e, i) => {
+    return <a href={`products/category/${e}`} key={i}>{e}</a>;
+  });
 }
 
 export default Categories;
