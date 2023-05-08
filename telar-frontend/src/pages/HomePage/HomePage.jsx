@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import { Technology } from "../../components/Technology/Technology.jsx";
 import { Fragances } from "../../components/Fragances/Fragances.jsx";

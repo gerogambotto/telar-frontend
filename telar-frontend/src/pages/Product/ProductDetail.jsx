@@ -2,7 +2,6 @@ import "./styles.scss"
 import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import { useParams } from "react-router";
-import products from "../../products.json";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import visa from "./visa.svg";
