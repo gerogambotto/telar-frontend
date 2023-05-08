@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
-export function Login() {
+export function LoginPage() {
   const useField = ({ type }) => {
     const [value, setValue] = useState("");
     const onChange = (event) => {
@@ -26,8 +26,6 @@ export function Login() {
 
     if (!isValidEmail(userMail.value)) {
       setError("Email is invalid");
-    } else if (userPassword.value === "") {
-      setError("Incorrect Password");
     } else if (userPassword.value.length < 5) {
       setError("Incorrect Password");
     } else {
@@ -44,9 +42,9 @@ export function Login() {
       <section className="">
         <div className="form-body-login">
           <form className="form-login" onSubmit={handleSubmit}>
-          <div className="title">Login</div>
+            <div className="title">Login</div>
             <div>
-            <div className="input__box">
+              <div className="input__box">
               <input
                 {...userMail}
                 name="userMail"
@@ -57,19 +55,18 @@ export function Login() {
               />
             </div>
             </div>
-
             <div>
-            <div className="input__box">
-              <input
-                {...userPassword}
-                name="Password"
-                placeholder="Password"
-                type={userPassword.type}
-                value={userPassword.value}
-                onChange={userPassword.onChange}
-              />
+              <div className="input__box">
+                <input
+                  {...userPassword}
+                  name="Password"
+                  placeholder="Password"
+                  type={userPassword.type}
+                  value={userPassword.value}
+                  onChange={userPassword.onChange}
+                />
+              </div>
             </div>
-</div>
             <div>
               <button className="login-button">Login</button>
               {error && (

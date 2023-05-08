@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import "./style.scss";
 
-export function Register() {
+export function RegisterPage() {
   const useField = ({ type }) => {
     const [value, setValue] = useState("");
     const onChange = (event) => {
@@ -42,7 +42,6 @@ export function Register() {
     } else if (userPassword.value !== userConfirmPassword.value) {
       setError("Passwords don t match");
     } else {
-      console.log("Submited");
       setError(null);
     }
   };

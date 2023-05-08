@@ -1,19 +1,19 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { Register } from "./pages/register/register.jsx";
-import { Login } from "./pages/login/login.jsx";
-import { Home } from "./pages/home/home.jsx";
-import { ProductDetail } from "./pages/product/productDetail.jsx";
-import Productcategory  from "./pages/category/productcategory";
+import { RegisterPage } from "./pages/RegisterPage/RegisterPage.jsx";
+import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
+import { HomePage } from "./pages/HomePage/HomePage.jsx";
+import { ProductDetail } from "./pages/Product/ProductDetail.jsx";
+import ProductCategory  from "./pages/Category/ProductCategory.jsx";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="register" element={<Register />} />
-      <Route path="login" element={<Login />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="register" element={<RegisterPage />} />
+      <Route path="login" element={<LoginPage />} />
       <Route path="/product/:id" element={<ProductDetail />} />
-      <Route path="/product/category/:category" element={<Productcategory />} />
+      <Route path="/product/category/:category" element={<ProductCategory />} />
     </Routes>
   );
 }

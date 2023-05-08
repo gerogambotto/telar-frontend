@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 import InputSearch from "../Search/imputSearch.jsx";
 import HomeButton from "../HomeButton/HomeButton.jsx";
 import Categories from "../Categories/Categories.jsx";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
-  const navigate = useNavigate();
-
-  const navigateToHome = () => navigate("/");
-  const navigateToLogin = () => navigate("/login");
-  const navigateToRegister = () => navigate("/register");
-
-  const [userIsLoged, setUserIsLoged] = useState(false);
+  const [userIsLogged, setUserIsLogged] = useState(false);
   const [categories, setCategories] = useState(null);
+  const [inputValue, setInputValue] = React.useState("");
 
+  const navigate = useNavigate()
+7
   const logOut = () => {
     localStorage.removeItem("token");
-    setUserIsLoged(!userIsLoged);
+    setUserIsLogged(false);
   };
 
   const fetchCategories = async () => {
@@ -25,41 +22,18 @@ export const Navbar = () => {
     const data = await products.json();
     setCategories(data);
   }
+
   useEffect(() => {
     fetchCategories();
-    
   }, []);
   
-  const getUserIsLoged = async () => {
-    const body = {
-      username: "kminchelle",
-      password: "0lelplR",
-    };
-    const res = await axios.post("https://dummyjson.com/auth/login", body);
-    if (res.status === 200) {
-      const token = res.data.token;
-      localStorage.setItem("token", token);
-      setUserIsLoged(true);
-    }
-  };
-
-  /*
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-    console.log({ setSearchInput });
-  };
-  */
-
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      getUserIsLoged();
-    } else {
-      setUserIsLoged(true);
+    if (localStorage.getItem("token")) {
+      setUserIsLogged(true);
     }
   }, []);
 
-  const [inputValue, setInputValue] = React.useState("");
+  if (userIsLogged) navigate('/')
 
   return (
     <div>
@@ -67,17 +41,17 @@ export const Navbar = () => {
         <div className="row justify-content-between navbar">
           <HomeButton />
           <InputSearch value={inputValue} setInputValue={setInputValue} />
-          {!userIsLoged ? (
+          {!userIsLogged ? (
             <div className="loginregister">
               <button
                 className="login-register-button"
-                onClick={navigateToLogin}
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
               <button
                 className="login-register-button"
-                onClick={navigateToRegister}
+                onClick={() => navigate("/register")}
               >
                 Register
               </button>

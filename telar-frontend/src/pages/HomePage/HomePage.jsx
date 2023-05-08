@@ -5,7 +5,7 @@ import { Fragances } from "../../components/Fragances/Fragances.jsx";
 import { House } from "../../components/House/House.jsx";
 import "./styles.scss";
 
-export function Home() {
+export function HomePage() {
   return (
     <Layout>
       <section className="home-section mt-5">

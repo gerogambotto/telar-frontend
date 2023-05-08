@@ -1,5 +1,5 @@
 import "./styles.scss"
-const Productcategory = () => {
+const ProductCategory = () => {
 
     return (
         <div>
@@ -8,4 +8,4 @@ const Productcategory = () => {
     );
 }
 
-export default Productcategory;
+export default ProductCategory;
