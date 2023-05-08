@@ -4,6 +4,7 @@ import { ProductCard } from "../ProductCard/ProductCard.jsx";
 import Carousel from "../Carousel/carousel.jsx";
 import "./styles.scss";
 
+
 export const Technology = () => {
   return (
     <section className=" smartphones">
@@ -22,7 +23,7 @@ export const Technology = () => {
         }}
       >
         <Carousel show={4} infiniteLoop={true}>
-          {products?.map((product) => {
+          {products ?.map((product) => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </Carousel>

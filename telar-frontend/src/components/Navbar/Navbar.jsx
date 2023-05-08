@@ -14,22 +14,8 @@ export const Navbar = () => {
 
   const [userIsLoged, setUserIsLoged] = useState(false);
   const [categories, setCategories] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
-  const logOut = () => {
-    localStorage.removeItem("token");
-    setUserIsLoged(!userIsLoged);
-  };
-
-  const fetchCategories = async () => {
-    const products = await fetch("https://dummyjson.com/products/categories");
-    const data = await products.json();
-    setCategories(data);
-  }
-  useEffect(() => {
-    fetchCategories();
-    
-  }, []);
-  
   const getUserIsLoged = async () => {
     const body = {
       username: "kminchelle",
@@ -43,13 +29,10 @@ export const Navbar = () => {
     }
   };
 
-  /*
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-    console.log({ setSearchInput });
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setUserIsLoged(!userIsLoged);
   };
-  */
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -59,10 +42,10 @@ export const Navbar = () => {
     }
   }, []);
 
-  const [inputValue, setInputValue] = React.useState("");
 
   return (
     <div>
+  
       <div className="container-fluid">
         <div className="row justify-content-between navbar">
           <HomeButton />
@@ -91,7 +74,11 @@ export const Navbar = () => {
           )}
         </div>
       </div>
-      <Categories categories={categories} />
+      <div className="container-fluid">
+        <div className="row justify-content-between navbar">
+          <Categories categories={categories} />
+        </div>
+      </div>
     </div>
   );
 };

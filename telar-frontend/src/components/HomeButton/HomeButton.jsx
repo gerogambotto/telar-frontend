@@ -12,7 +12,7 @@ function HomeButton() {
       <button className="homeButton" onClick={navigateToHome}>
         <img
           className="logo"
-          src="../../../public/assets/logos/telar_logo.png"
+          src="../../../assets/logos/telar_logo.png"
         />
       </button>
     </div>

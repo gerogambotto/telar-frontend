@@ -42,7 +42,7 @@ export function Register() {
     } else if (userPassword.value !== userConfirmPassword.value) {
       setError("Passwords don t match");
     } else {
-      console.log("Submited");
+      
       setError(null);
     }
   };

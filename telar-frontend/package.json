@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@coreui/react": "^4.7.0",
+    "@coreui/react": "^4.8.0",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "antd": "^5.4.6",

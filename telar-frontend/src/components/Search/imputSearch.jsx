@@ -6,12 +6,11 @@ function InputSearch({ setInputValue, value }) {
   const handleChange = (event) =>{
       const inputValue = event.target.value;
       return setInputValue(inputValue);
-      console.log(inputValue);
+     
   }
   const searchProducts = () => {
     fetch(`https://dummyjson.com/products/search?q=${value}`)
       .then((res) => res.json())
-      .then(console.log)
   };
 
   useEffect(() => {
