@@ -23,7 +23,7 @@ export const Technology = () => {
         }}
       >
         <Carousel show={4} infiniteLoop={true}>
-          {products ?.map((product) => {
+          {products?.map((product) => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </Carousel>
