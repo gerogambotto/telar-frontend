@@ -1,7 +1,7 @@
 import "./styles.scss";
 import { useEffect } from "react";
 
-function InputSearch({ setInputValue, value }) {
+function InputSearch({}) {
 
   
   const searchProducts = async () => {
@@ -11,14 +11,12 @@ function InputSearch({ setInputValue, value }) {
   };
 
   useEffect(() => {
-    searchProducts();
+    
   }, []);
   return (
     <form className="form">
       <input
         type="text"
-        onChange={setInputValue(event.target.value)}
-        value={value}
         placeholder="Search"
       />
       <button>

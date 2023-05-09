@@ -4,10 +4,10 @@ import "./styles.scss";
 
 export const CarouselProducts = ({ categories , data }) => {
   return (
-    <section className=" smartphones">
+    <section className="carousel-section">
       <div className="row mr-0 mb-0 justify-content-left title">
         <h2>{categories}</h2>
-        <a className="view">view</a>
+        <a className="view">View More</a>
       </div>
 
       <div

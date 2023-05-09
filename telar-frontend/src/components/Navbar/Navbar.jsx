@@ -33,8 +33,6 @@ export const Navbar = () => {
     }
   }, []);
 
-  if (userIsLogged) navigate('/')
-
   return (
     <div>
   

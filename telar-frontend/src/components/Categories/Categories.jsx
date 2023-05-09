@@ -1,103 +1,61 @@
 import { useState } from "react";
 import "./styles.scss";
+import { Col, Container, Row } from "react-bootstrap";
 
 function Categories({ categories }) {
-
-
-  const technology = categories?.filter(
-    (category) => category === "smartphones" || category === "laptops"
-  );
-
-  const clothes = categories?.filter(
-    (category) =>
-      category === "womens-dresses" ||
-      category === "womens-shoes" ||
-      category === "mens-shirts" ||
-      category === "mens-shoes" ||
-      category === "mens-watches" ||
-      category === "womens-watches" ||
-      category === "womens-bags"  
-  );
-  
-  const healthCare = categories?.filter(
-    (category) => category === "fragrances" || category === "skincare"
-  );
-
-
-  const [showTechnology, setShowTechnology] = useState(false);
-  const [showClothing, setShowClothing] = useState(false);
-  const [showPersonalCare, setShowPersonalCare] = useState(false);
-
-  
+  const [showModal, setShowModal] = useState(false);
+  const categoriesToMap = [];
 
   return (
     <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
-      <ul className="container d-flex flex-row  justify-content-center align-items-center inline">
-        <li
+      <nav className="container d-flex flex-row  justify-content-center align-items-center inline">
+        <div
           className="m-2 "
-          onMouseEnter={() => setShowTechnology(true)}
-          onMouseLeave={() => setShowTechnology(false)}
+          onMouseEnter={() => setShowModal(true)}
+          onMouseLeave={() => setShowModal(false)}
         >
           Technology |
-          {showTechnology && (
-            <div className=" ">
-              {technology.map((e, i) => {
-                return (
-                  <ul className="" key={i}>
-                    <li>{e}</li>
-                  </ul>
-                );
-              })}
-            </div>
-          )}
-        </li>
-        <li
+        </div>
+        <div
           className="m-2"
-          onMouseEnter={() => setShowClothing(true)}
-          onMouseLeave={() => setShowClothing(false)}
+          onMouseEnter={() => setShowModal(true)}
+          onMouseLeave={() => setShowModal(false)}
         >
           Clothes |
-          {showClothing && (
-            <div className="">
-              {clothes.map((e, i) => {
-                return (
-                  <ul key={i}>
-                    <li>{e}</li>
-                  </ul>
-                );
-              })}
-            </div>
-          )}
-        </li>
-        <li
+        </div>
+        <div
           className="m-2"
-          onMouseEnter={() => setShowPersonalCare(true)}
-          onMouseLeave={() => setShowPersonalCare(false)}
+          onMouseEnter={() => setShowModal(true)}
+          onMouseLeave={() => setShowModal(false)}
         >
-          HealthCare |
-          {showPersonalCare && (
-            <div className="">
-              {healthCare.map((e, i) => {
-                return (
-                  <ul key={i}>
-                    <li>{e}</li>
-                  </ul>
-                );
-              })}
-            </div>
-          )}
-        </li>
-      </ul>
+          HealthCare
+        </div>
+        {/* {showModal && (
+          <Container>
+            <Row>
+              <Col>
+                <title>Celulares</title>
+                <div>Xiaomi</div>
+                <div>Samsung</div>
+                <div>Apple</div>
+              </Col>
+              <Col>
+                <title>Monitores</title>
+                <div>Samsung</div>
+                <div>AOC</div>
+                <div>Alienware</div>
+              </Col>
+              <Col>
+                <title>Reloj</title>
+                <div>Xiaomi</div>
+                <div>Samsung</div>
+                <div>Apple</div>
+              </Col>
+            </Row>
+          </Container>
+        )} */}
+      </nav>
     </nav>
   );
-} /* 
-  return (
-    <div className="container">
-      <a href=""> Technology</a>
-      <a href=""> Clothes</a>
-      <a href=""> HealthCare</a>
-    </div>
-  )
-} */
-
+}
 export default Categories;

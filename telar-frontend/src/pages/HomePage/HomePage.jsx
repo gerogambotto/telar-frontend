@@ -49,6 +49,7 @@ export function HomePage() {
             categories={Object.keys((e))}
             data={filterByCategories(Object.values(e)[0])}
             key={Object.keys((e))}
+            
           />
         ))}
       </section>
