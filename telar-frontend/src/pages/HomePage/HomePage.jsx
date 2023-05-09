@@ -34,7 +34,7 @@ export function HomePage() {
   const filterByCategories = (arrayOfFilters) => {
     const filteredProducts = [];
     products?.products?.map((e) => {
-      if (arrayOfFilters[0].includes(e.category))
+      if (arrayOfFilters.includes(e.category))
         filteredProducts.push(e);
     });
     return filteredProducts;
@@ -47,7 +47,7 @@ export function HomePage() {
         {categoriesToFilter.map((e) => (
           <CarouselProducts
             categories={Object.keys((e))}
-            data={filterByCategories(Object.values(e))}
+            data={filterByCategories(Object.values(e)[0])}
           />
         ))}
       </section>

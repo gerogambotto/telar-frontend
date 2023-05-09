@@ -6,8 +6,8 @@ export const CarouselProducts = ({ categories , data }) => {
   return (
     <section className=" smartphones">
       <div className="row mr-0 mb-0 justify-content-left title">
-        <h2>Technology</h2>
-        <a className="view">View</a>
+        <h2>{categories}</h2>
+        <a className="view">view</a>
       </div>
 
       <div
