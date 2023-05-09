@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const Navbar = () => {
   const [userIsLogged, setUserIsLogged] = useState(false);
   const [categories, setCategories] = useState(null);
-  const [inputValue, setInputValue] = React.useState("");
+  const [inputValue, setInputValue] = useState(" ");
 
   const navigate = useNavigate()
 7
@@ -33,10 +33,9 @@ export const Navbar = () => {
     }
   }, []);
 
-  if (userIsLogged) navigate('/')
-
   return (
     <div>
+  
       <div className="container-fluid">
         <div className="row justify-content-between navbar">
           <HomeButton />
@@ -65,7 +64,11 @@ export const Navbar = () => {
           )}
         </div>
       </div>
-      <Categories categories={categories} />
+      <div className="container-fluid">
+        <div className="row justify-content-between navbar">
+          <Categories categories={categories} />
+        </div>
+      </div>
     </div>
   );
 };

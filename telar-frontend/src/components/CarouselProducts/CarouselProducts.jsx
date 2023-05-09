@@ -1,16 +1,13 @@
-import React from "react";
-import { products } from "../../technology.json";
-import { ProductCard } from "../ProductCard/ProductCard.jsx";
 import Carousel from "../Carousel/carousel.jsx";
+import { ProductCard } from "../ProductCard/ProductCard";
 import "./styles.scss";
 
-
-export const Technology = () => {
+export const CarouselProducts = ({ categories , data }) => {
   return (
-    <section className=" smartphones">
+    <section className="carousel-section">
       <div className="row mr-0 mb-0 justify-content-left title">
-        <h2>Technology</h2>
-        <a className="view">View</a>
+        <h2>{categories}</h2>
+        <a className="view">View More</a>
       </div>
 
       <div
@@ -22,8 +19,8 @@ export const Technology = () => {
           marginTop: 64,
         }}
       >
-        <Carousel show={4} infiniteLoop={true}>
-          {products?.map((product) => {
+        <Carousel show={4} infiniteloop={true}>
+          {data.map((product) => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </Carousel>

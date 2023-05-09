@@ -1,27 +1,11 @@
-import React from "react";
 import "./styles.scss";
-import { useEffect } from "react";
 
-function InputSearch({ setInputValue, value }) {
-  const handleChange = (event) =>{
-      const inputValue = event.target.value;
-      return setInputValue(inputValue);
-  }
-  const searchProducts = () => {
-    fetch(`https://dummyjson.com/products/search?q=${value}`)
-      .then((res) => res.json())
-  };
+function InputSearch({}) {
 
-  useEffect(() => {
-    searchProducts()
-    
-  }, []);   
   return (
     <form className="form">
       <input
         type="text"
-        onChange={handleChange}
-        value={value}
         placeholder="Search"
       />
       <button>

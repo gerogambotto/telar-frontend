@@ -1,19 +1,23 @@
 @import '../../styles/variables.scss';
-.categories{
-    margin: 0;
-    background: white;
-    height: 35px;
-    .category{
-      cursor: pointer;
-      margin-bottom: 5px;
-      margin-top: 5px;
-    }
-    a{
-      padding:  0 20px 0 20px;
-      border-left: 1px solid $primaryColor;
-    }
-    
-  }
-  .category:hover {
-    border-bottom: 1px solid $primaryColor;
-  }
+.text{
+  text-decoration: none;
+} 
+ul{
+  list-style: none;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
