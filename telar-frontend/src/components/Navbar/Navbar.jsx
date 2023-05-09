@@ -4,6 +4,7 @@ import InputSearch from "../Search/imputSearch.jsx";
 import HomeButton from "../HomeButton/HomeButton.jsx";
 import Categories from "../Categories/Categories.jsx";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const Navbar = () => {
   const [userIsLogged, setUserIsLogged] = useState(false);
@@ -18,9 +19,8 @@ export const Navbar = () => {
   };
 
   const fetchCategories = async () => {
-    const products = await fetch("https://dummyjson.com/products/categories");
-    const data = await products.json();
-    setCategories(data);
+    const res = await axios.get("https://dummyjson.com/products/categories");
+    setCategories(res.data);
   }
 
   useEffect(() => {
@@ -32,8 +32,6 @@ export const Navbar = () => {
       setUserIsLogged(true);
     }
   }, []);
-
-  if (userIsLogged) navigate('/')
 
   return (
     <div>
