@@ -1,18 +1,7 @@
 import "./styles.scss";
-import { useEffect } from "react";
 
 function InputSearch({}) {
 
-  
-  const searchProducts = async () => {
-    const res = await fetch(`https://dummyjson.com/products/search?q=${value}`);
-    const data = await res.json();
-
-  };
-
-  useEffect(() => {
-    
-  }, []);
   return (
     <form className="form">
       <input
