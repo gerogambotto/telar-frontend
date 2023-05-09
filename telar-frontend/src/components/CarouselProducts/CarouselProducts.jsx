@@ -3,8 +3,6 @@ import { ProductCard } from "../ProductCard/ProductCard";
 import "./styles.scss";
 
 export const CarouselProducts = ({ categories , data }) => {
-  console.log(categories)
-  console.log(data)
   return (
     <section className=" smartphones">
       <div className="row mr-0 mb-0 justify-content-left title">

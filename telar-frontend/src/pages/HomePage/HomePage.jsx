@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
-import { Technology } from "../../components/Technology/Technology.jsx";
-import { Fragances } from "../../components/Fragances/Fragances.jsx";
-import { House } from "../../components/House/House.jsx";
-import "./styles.scss";
 import { CarouselProducts } from "../../components/CarouselProducts/CarouselProducts.jsx";
-import { array, object } from "prop-types";
+import "./styles.scss";
 
 export function HomePage() {
   const [products, setProducts] = useState(null);
@@ -20,35 +16,25 @@ export function HomePage() {
     getProduct();
   }, []);
 
-  /*  const categoriesToFilter = [
-    ["smartphones", "laptops", "tablets"],
-    [ "womens-dresses",
-      "mens-shirts",
-      "mens-shoes",
-      "mens-watches",
-      "womens-watches",
-      "womens-bags",
-    ],
-    ["fragrances", "skincare"],
-  ];
-   */
-  const categoriesToFilter = {
-    electronics: ["smartphones", "laptops", "tablets"],
-    fashion: [
-      "womens-dresses",
-      "mens-shirts",
-      "mens-shoes",
-      "mens-watches",
-      "womens-watches",
-      "womens-bags",
-    ],
-    beauty: ["fragrances", "skincare"]
-  };
+  const categoriesToFilter = [
+    {electronics: ["smartphones", "laptops", "tablets"]},
+    {
+      fashion: [
+        "womens-dresses",
+        "mens-shirts",
+        "mens-shoes",
+        "mens-watches",
+        "womens-watches",
+        "womens-bags",
+      ]
+    },
+    {beauty: ["fragrances", "skincare"]}
+  ]
 
   const filterByCategories = (arrayOfFilters) => {
     const filteredProducts = [];
     products?.products?.map((e) => {
-      if (Object.values(arrayOfFilters).includes(e.category))
+      if (arrayOfFilters[0].includes(e.category))
         filteredProducts.push(e);
     });
     return filteredProducts;
@@ -58,19 +44,13 @@ export function HomePage() {
   return (
     <Layout>
       <section className="home-section mt-5">
-        {Object.keys(categoriesToFilter).forEach((e) => (
+        {categoriesToFilter.map((e) => (
           <CarouselProducts
-            key={e}
-            categories={e}
-            data={filterByCategories(categoriesToFilter[e])}
+            categories={Object.keys((e))}
+            data={filterByCategories(Object.values(e))}
           />
         ))}
       </section>
     </Layout>
   );
 }
-/*  
-  Object.keys(categoriesToFilter).forEach((e) => { 
-    console.log(e, categoriesToFilter[e])
-   });
-*/
