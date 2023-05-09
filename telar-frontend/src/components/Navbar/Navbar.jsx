@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const Navbar = () => {
   const [userIsLogged, setUserIsLogged] = useState(false);
   const [categories, setCategories] = useState(null);
-  const [inputValue, setInputValue] = React.useState("");
+  const [inputValue, setInputValue] = useState(" ");
 
   const navigate = useNavigate()
 7
