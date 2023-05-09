@@ -13,6 +13,11 @@ $font-size--large-text--desktop: 2rem;
 
 .productContainer {
   min-height: 100vh;
+  .productImage{
+    display: flex;
+    justify-content: center;
+  }
+  
 }
 .imagecontainer {
   display: flex;
@@ -188,7 +193,7 @@ img {
     @extend .examples;
     background-color: $highlight2;
     h2,
-    h3 {
+    h3 {  
       color: $white;
     }
   }

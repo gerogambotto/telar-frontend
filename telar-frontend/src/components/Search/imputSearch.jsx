@@ -6,7 +6,6 @@ function InputSearch({ setInputValue, value }) {
   const handleChange = (event) =>{
       const inputValue = event.target.value;
       return setInputValue(inputValue);
-     
   }
   const searchProducts = () => {
     fetch(`https://dummyjson.com/products/search?q=${value}`)

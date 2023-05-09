@@ -34,14 +34,14 @@ function Categories({ categories }) {
     <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
       <ul className="container d-flex flex-row  justify-content-center align-items-center inline">
         <li
-          className="m-2"
+          className="m-2 "
           onMouseEnter={() => setShowTechnology(true)}
           onMouseLeave={() => setShowTechnology(false)}
         >
           Technology |
           {showTechnology && (
             <div className=" ">
-              {technology?.map((e, i) => {
+              {technology.map((e, i) => {
                 return (
                   <ul className="" key={i}>
                     <li>{e}</li>
@@ -59,7 +59,7 @@ function Categories({ categories }) {
           Clothes |
           {showClothing && (
             <div className="">
-              {clothes?.map((e, i) => {
+              {clothes.map((e, i) => {
                 return (
                   <ul key={i}>
                     <li>{e}</li>
@@ -77,7 +77,7 @@ function Categories({ categories }) {
           HealthCare |
           {showPersonalCare && (
             <div className="">
-              {healthCare?.map((e, i) => {
+              {healthCare.map((e, i) => {
                 return (
                   <ul key={i}>
                     <li>{e}</li>

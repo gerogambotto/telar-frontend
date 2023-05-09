@@ -3,7 +3,6 @@ import Spinner from "react-bootstrap/Spinner";
 import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import { useParams } from "react-router";
-import products from "../../products.json";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import visa from "./visa.svg";
@@ -30,18 +29,18 @@ export function ProductDetail() {
     <Layout>
       <div className="categories"></div>
 
-      <Container>
+      <Container >
         {isLoading ? (
           <div className="loader-container row justify-content-center align-items-center">
             <div className="loader"></div>
           </div>
         ) : (
           <Row className="productContainer">
-            <Col sm={8} className="">
+            <Col sm={8} className="productImage">
               <img
                 src={product?.images[0]}
                 alt=""
-                className="productImage mt-5"
+                className=" mt-5"
               ></img>
             </Col>
             <Col sm={4}>

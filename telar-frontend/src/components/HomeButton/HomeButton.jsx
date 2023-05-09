@@ -1,20 +1,18 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
 
 function HomeButton() {
   const navigate = useNavigate();
 
-  const navigateToHome = () => navigate("/");
-
   return (
     <div className="menu">
-      <button className="homeButton" onClick={navigateToHome}>
-        <img
-          className="logo"
-          src="../../../assets/logos/telar_logo.png"
-        />
-      </button>
+      <img
+        className="logo"
+        src="/assets/logos/telar_logo.png"
+        alt='logo'
+        onClick={()=>navigate('/')}
+      />
     </div>
   );
 }
