@@ -5,9 +5,9 @@ import "./styles.scss";
 export const CarouselProducts = ({ categories , data }) => {
   return (
     <section className="carousel-section">
-      <div className="row mr-0 mb-0 justify-content-left title">
+      <div className="ml-3 row">
         <h2>{categories}</h2>
-        <a className="view">View More</a>
+       {/*  <a href={`products/category/${categories}`} className="view">View More</a> */}
       </div>
 
       <div

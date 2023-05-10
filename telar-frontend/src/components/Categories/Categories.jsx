@@ -9,13 +9,14 @@ function Categories({ categories }) {
   return (
     <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
       <nav className="container d-flex flex-row  justify-content-center align-items-center inline">
-        <div
+        <a
           className="m-2 "
+          href="/products/category/laptops"
           onMouseEnter={() => setShowModal(true)}
           onMouseLeave={() => setShowModal(false)}
         >
           Technology |
-        </div>
+        </a>
         <div
           className="m-2"
           onMouseEnter={() => setShowModal(true)}
