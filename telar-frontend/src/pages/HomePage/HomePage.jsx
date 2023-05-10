@@ -17,9 +17,9 @@ export function HomePage() {
   }, []);
 
   const categoriesToFilter = [
-    {electronics: ["smartphones", "laptops", "tablets"]},
+    {Electronics: ["smartphones", "laptops", "tablets"]},
     {
-      fashion: [
+      Fashion: [
         "womens-dresses",
         "mens-shirts",
         "mens-shoes",
@@ -28,7 +28,7 @@ export function HomePage() {
         "womens-bags",
       ]
     },
-    {beauty: ["fragrances", "skincare"]}
+    {Beauty: ["fragrances", "skincare"]}
   ]
 
   const filterByCategories = (arrayOfFilters) => {

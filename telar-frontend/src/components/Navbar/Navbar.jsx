@@ -58,7 +58,7 @@ export const Navbar = () => {
           ) : (
             <div className="loginregister">
               <button className="login-register-button" onClick={logOut}>
-                Log out
+                Log out 
               </button>
             </div>
           )}

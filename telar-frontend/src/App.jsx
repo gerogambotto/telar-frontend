@@ -4,7 +4,7 @@ import { RegisterPage } from "./pages/RegisterPage/RegisterPage.jsx";
 import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 import { HomePage } from "./pages/HomePage/HomePage.jsx";
 import { ProductDetail } from "./pages/Product/ProductDetail.jsx";
-import ProductCategory  from "./pages/Category/ProductCategory.jsx";
+import ProductsCategory  from "./pages/Category/ProductCategory.jsx";
 
 function App() {
   return (
@@ -13,7 +13,10 @@ function App() {
       <Route path="register" element={<RegisterPage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="/product/:id" element={<ProductDetail />} />
-      <Route path="/product/category/:category" element={<ProductCategory />} />
+      <Route
+        path="/products/category/:category"
+        element={<ProductsCategory />}
+      />
     </Routes>
   );
 }
