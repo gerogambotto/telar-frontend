@@ -1,7 +1,6 @@
-const Filters = ({setFilters, filters, maxPrice}) => {
-
-  const handleChangeMinPrice = (event) => {
-    setFilters({maxPrice: event.target.value})
+const Filters = ({ setFilters, filters, maxPrice }) => {
+  const handleChangeMaxPrice = (event) => {
+    setFilters({ maxPrice: event.target.value })
   }
 
   return (
@@ -13,7 +12,7 @@ const Filters = ({setFilters, filters, maxPrice}) => {
           id='price'
           min='0'
           max={maxPrice}
-          onChange={handleChangeMinPrice}
+          onChange={handleChangeMaxPrice}
           value={filters.maxPrice}
         />
         <span>{maxPrice}</span>

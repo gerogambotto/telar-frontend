@@ -14,11 +14,13 @@ export const Navbar = () => {
 
   const navigate = useNavigate()
   const logOut = () => {
+    // eslint-disable-next-line no-undef
     localStorage.removeItem('token')
     setUserIsLogged(false)
   }
 
   useEffect(() => {
+    // eslint-disable-next-line no-undef
     if (localStorage.getItem('token')) {
       setUserIsLogged(true)
     }
@@ -26,55 +28,48 @@ export const Navbar = () => {
 
   return (
     <div>
-      <div className="container-fluid">
-        <div className="row justify-content-between navbar">
+      <div className='container-fluid'>
+        <div className='row justify-content-between navbar'>
           <HomeButton />
           <InputSearch value={inputValue} setInputValue={setInputValue} />
           {!userIsLogged ? (
-            <div className="loginregister">
+            <div className='loginregister'>
               <button
-                className="login-register-button"
+                className='login-register-button'
                 onClick={() => navigate('/login')}
               >
                 Login
               </button>
               <button
-                className="login-register-button"
+                className='login-register-button'
                 onClick={() => navigate('/register')}
               >
                 Register
               </button>
             </div>
           ) : (
-            <div className="loginregister">
-              <button className="login-register-button" onClick={logOut}>
+            <div className='loginregister'>
+              <button className='login-register-button' onClick={logOut}>
                 Log out
               </button>
             </div>
           )}
         </div>
       </div>
-      <nav className="container-fluid">
-        <div className="row justify-content-between navbar">
-          <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
-            <nav className="container d-flex flex-row  justify-content-center align-items-center inline">
-              <div
-                className="m-2 "
-                onMouseEnter={() => setShowModal(true)}
-                onMouseLeave={() => setShowModal(false)}
-              >
-                {categoriesClassification.map((category) => (
-                  <Title categories={Object.keys(category)}></Title>
-                ))}
-              </div>
-            </nav>
-          </nav>
+      <nav className='container-fluid'>
+        <div className=''>
+          <div
+            className='d-flex justify-content-center align-items-center'
+            onMouseEnter={() => setShowModal(true)}
+            onMouseLeave={() => setShowModal(false)}
+          >
+            {categoriesClassification.map((category) => (
+              <Title categories={Object.keys(category)}></Title>
+            ))}
+          </div>
         </div>
       </nav>
     </div>
-    /* {showModal && (
-      <Modal subcategorias={Object.values(categories)}/> 
-      )} */
   )
 }
 

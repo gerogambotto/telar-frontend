@@ -11,25 +11,26 @@ const ProductsCategory = () => {
 
   const [products, setProducts] = useState()
   const getProducts = async () => {
-    const res = await axios(`https://dummyjson.com/products/category/${category}`)
+    const res = await axios(
+      `https://dummyjson.com/products/category/${category}`
+    )
     setProducts(res.data.products)
     getMaxPrice(res.data.products)
   }
 
   const [filteredProducts, setFilteredProducts] = useState(null)
   const getFilterProducts = (products) => {
-
-    const res = products?.filter( product => product.price <= filters.maxPrice)
+    const res = products?.filter((product) => product.price <= filters.maxPrice)
     setFilteredProducts(res)
   }
 
   const [maxPrice, setMaxPrice] = useState('0')
   const getMaxPrice = (products) => {
-    const prices = products.map(product => product.price)
+    const prices = products.map((product) => product.price)
     setMaxPrice(Math.max(...prices).toString())
   }
 
-  const [filters, setFilters] = useState({maxPrice: 0})
+  const [filters, setFilters] = useState({ maxPrice: 0 })
 
   useEffect(() => {
     getFilterProducts(products)
@@ -39,8 +40,8 @@ const ProductsCategory = () => {
     getProducts()
   }, [])
 
-  useEffect(()=>{
-    setFilters({maxPrice: maxPrice})
+  useEffect(() => {
+    setFilters({ maxPrice: maxPrice })
   }, [maxPrice])
 
   return (
@@ -66,11 +67,13 @@ const ProductsCategory = () => {
             }}
           >
             <div className='d-flex flex-wrap '>
-              {
-                filteredProducts
-                  ? filteredProducts.map((product) => <RenderProducts key={product.id} product={product} />)
-                  : products?.map((product) => <RenderProducts key={product.id} product={product} />)
-              }
+              {filteredProducts
+                ? filteredProducts.map((product) => (
+                  <RenderProducts key={product.id} product={product} />
+                ))
+                : products?.map((product) => (
+                  <RenderProducts key={product.id} product={product} />
+                ))}
             </div>
           </Col>
         </Row>
