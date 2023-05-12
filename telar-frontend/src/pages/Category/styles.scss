@@ -1,22 +1,22 @@
 .container-category {
   min-height: 100vh;
   margin-bottom: 1rem;
- .category-title{
-  color: #3c3c3b;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 30px;
-  text-transform: capitalize;
- }
- .filters{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;
-  font-weight: 700;
-  .filter >div{
+
+  .filters{
     display: flex;
-    gap:1rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 700;
+
+    .filter{
+      .filter-container{
+        display: flex;
+        gap:1rem;
+      }
+      input{
+        cursor: pointer;
+      }
+    }
   }
- }
 }

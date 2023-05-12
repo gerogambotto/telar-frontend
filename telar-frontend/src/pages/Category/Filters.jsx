@@ -5,7 +5,7 @@ const Filters = ({ setFilters, filters, maxPrice }) => {
 
   return (
     <section className='filters'>
-      <div>
+      <div className='filter-container'>
         <label htmlFor='price'>Price from </label>
         <input
           type='range'
