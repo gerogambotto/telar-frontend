@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { Layout } from '../../components/Layout/Layout'
 import './styles.scss'
 import axios from 'axios'
-import RenderProducts from '../../components/RenderProducts/RenderProducts'
 import { Col, Container, Row } from 'react-bootstrap'
 import Filters from './Filters'
 import {ProductCard} from "../../components/ProductCard/ProductCard.jsx";

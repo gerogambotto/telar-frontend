@@ -1,5 +1,5 @@
 import "./styles.scss";
-import React, { useState } from "react";
+import React from "react";
 
 export const ProductCard = ({ product }) => {
 
