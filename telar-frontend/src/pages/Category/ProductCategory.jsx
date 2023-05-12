@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { Layout } from '../../components/Layout/Layout'
 import './styles.scss'
 import axios from 'axios'
-import RenderProducts from '../../components/RenderProducts/RenderProducts'
 import { Col, Container, Row } from 'react-bootstrap'
 import Filters from './Filters'
+import { ProductCard } from '../../components/ProductCard/ProductCard'
 const ProductsCategory = () => {
   const { category } = useParams()
 
@@ -66,13 +66,13 @@ const ProductsCategory = () => {
               marginTop: 64
             }}
           >
-            <div className='d-flex flex-wrap '>
+            <div className='row '>
               {filteredProducts
                 ? filteredProducts.map((product) => (
-                  <RenderProducts key={product.id} product={product} />
+                  <ProductCard key={product.id} product={product} />
                 ))
                 : products?.map((product) => (
-                  <RenderProducts key={product.id} product={product} />
+                  <ProductCard key={product.id} product={product} />
                 ))}
             </div>
           </Col>

@@ -18,12 +18,13 @@ export const CarouselProducts = ({ categories , data }) => {
             marginRight: "auto",
             marginTop: 64,
           }}
-        >
+        ><div className="col md-3">
           <Carousel show={4} infiniteloop={true}>
             {data.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
+              return <ProductCard   key={product.id} product={product} />;
             })}
           </Carousel>
+          </div>
         </div>
       </div>
     </section>

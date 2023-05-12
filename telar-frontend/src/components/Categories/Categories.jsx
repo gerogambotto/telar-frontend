@@ -31,30 +31,7 @@ function Categories({ categories }) {
         >
           HealthCare
         </div>
-        {/* {showModal && (
-          <Container>
-            <Row>
-              <Col>
-                <title>Celulares</title>
-                <div>Xiaomi</div>
-                <div>Samsung</div>
-                <div>Apple</div>
-              </Col>
-              <Col>
-                <title>Monitores</title>
-                <div>Samsung</div>
-                <div>AOC</div>
-                <div>Alienware</div>
-              </Col>
-              <Col>
-                <title>Reloj</title>
-                <div>Xiaomi</div>
-                <div>Samsung</div>
-                <div>Apple</div>
-              </Col>
-            </Row>
-          </Container>
-        )} */}
+        
       </nav>
     </nav>
   );
