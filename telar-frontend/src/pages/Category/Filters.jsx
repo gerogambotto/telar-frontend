@@ -1,15 +1,9 @@
-import { useState } from 'react'
-
-const Filters = ({ setFilters }) => {
-  const [minPrice, setMinPrice] = useState(0)
+const Filters = ({setFilters, filters, maxPrice}) => {
 
   const handleChangeMinPrice = (event) => {
-    setMinPrice(event.target.value)
-    setFilters(prevState => ({
-      ...prevState,
-      minPrice: event.target.value
-    }))
+    setFilters({maxPrice: event.target.value})
   }
+
   return (
     <section className='filters'>
       <div>
@@ -18,10 +12,11 @@ const Filters = ({ setFilters }) => {
           type='range'
           id='price'
           min='0'
-          max='1000'
+          max={maxPrice}
           onChange={handleChangeMinPrice}
+          value={filters.maxPrice}
         />
-        <span>${minPrice}</span>
+        <span>{maxPrice}</span>
       </div>
     </section>
   )

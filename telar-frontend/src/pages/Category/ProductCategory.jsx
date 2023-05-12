@@ -8,34 +8,40 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Filters from './Filters'
 const ProductsCategory = () => {
   const { category } = useParams()
-  const [products, setProducts] = useState()
-  const [filteredProducts, setFilteredProducts] = useState(null)
-  const [filters, setFilters] = useState({
-    maxPrice: 0
-  })
 
+  const [products, setProducts] = useState()
   const getProducts = async () => {
-    const res = await axios(
-      `https://dummyjson.com/products/category/${category}`
-    )
+    const res = await axios(`https://dummyjson.com/products/category/${category}`)
     setProducts(res.data.products)
+    getMaxPrice(res.data.products)
   }
+
+  const [filteredProducts, setFilteredProducts] = useState(null)
+  const getFilterProducts = (products) => {
+
+    const res = products?.filter( product => product.price <= filters.maxPrice)
+    setFilteredProducts(res)
+  }
+
+  const [maxPrice, setMaxPrice] = useState('0')
+  const getMaxPrice = (products) => {
+    const prices = products.map(product => product.price)
+    setMaxPrice(Math.max(...prices).toString())
+  }
+
+  const [filters, setFilters] = useState({maxPrice: 0})
+
+  useEffect(() => {
+    getFilterProducts(products)
+  }, [filters])
 
   useEffect(() => {
     getProducts()
   }, [])
 
-  useEffect(() => {
-    filterProducts(products)
-  }, [filters])
-
-  const filterProducts = (products) => {
-    setFilteredProducts(
-      products?.filter((product) => {
-        return product.price <= filters.maxPrice
-      })
-    )
-  }
+  useEffect(()=>{
+    setFilters({maxPrice: maxPrice})
+  }, [maxPrice])
 
   return (
     <Layout>
@@ -46,7 +52,11 @@ const ProductsCategory = () => {
         </Row>
         <Row className='row m-auto'>
           <Col lg={4}>
-            <Filters changeFilters={setFilters} />
+            <Filters
+              setFilters={setFilters}
+              filters={filters}
+              maxPrice={maxPrice}
+            />
           </Col>
           <Col
             lg={8}
@@ -56,9 +66,11 @@ const ProductsCategory = () => {
             }}
           >
             <div className='d-flex flex-wrap '>
-              {filteredProducts
-                ? filteredProducts.map((product) => <RenderProducts key={product.id} product={product} />)
-                : products?.map((product) => <RenderProducts key={product.id} product={product} />)}
+              {
+                filteredProducts
+                  ? filteredProducts.map((product) => <RenderProducts key={product.id} product={product} />)
+                  : products?.map((product) => <RenderProducts key={product.id} product={product} />)
+              }
             </div>
           </Col>
         </Row>
