@@ -1,41 +1,31 @@
-import React, { useEffect, useState } from "react";
-import "./styles.scss";
-import InputSearch from "../Search/imputSearch.jsx";
-import HomeButton from "../HomeButton/HomeButton.jsx";
-import Categories from "../Categories/Categories.jsx";
-import { useNavigate } from "react-router-dom";
+import './styles.scss'
+import React, { useEffect, useState } from 'react'
+import InputSearch from '../Search/imputSearch.jsx'
+import HomeButton from '../HomeButton/HomeButton.jsx'
+import { useNavigate } from 'react-router-dom'
+import categoriesClassification from '../../../categoriesClassification.json'
+import Title from './Title.jsx'
 
 export const Navbar = () => {
-  const [userIsLogged, setUserIsLogged] = useState(false);
-  const [categories, setCategories] = useState(null);
-  const [inputValue, setInputValue] = useState(" ");
+  const [userIsLogged, setUserIsLogged] = useState(false)
+  const [categories, setCategories] = useState(null)
+  const [inputValue, setInputValue] = useState(' ')
+  const [showModal, setShowModal] = useState(false)
 
   const navigate = useNavigate()
-7
   const logOut = () => {
-    localStorage.removeItem("token");
-    setUserIsLogged(false);
-  };
-
-  const fetchCategories = async () => {
-    const products = await fetch("https://dummyjson.com/products/categories");
-    const data = await products.json();
-    setCategories(data);
+    localStorage.removeItem('token')
+    setUserIsLogged(false)
   }
 
   useEffect(() => {
-    fetchCategories();
-  }, []);
-  
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setUserIsLogged(true);
+    if (localStorage.getItem('token')) {
+      setUserIsLogged(true)
     }
-  }, []);
+  }, [])
 
   return (
     <div>
-  
       <div className="container-fluid">
         <div className="row justify-content-between navbar">
           <HomeButton />
@@ -44,13 +34,13 @@ export const Navbar = () => {
             <div className="loginregister">
               <button
                 className="login-register-button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate('/login')}
               >
                 Login
               </button>
               <button
                 className="login-register-button"
-                onClick={() => navigate("/register")}
+                onClick={() => navigate('/register')}
               >
                 Register
               </button>
@@ -58,19 +48,34 @@ export const Navbar = () => {
           ) : (
             <div className="loginregister">
               <button className="login-register-button" onClick={logOut}>
-                Log out 
+                Log out
               </button>
             </div>
           )}
         </div>
       </div>
-      <div className="container-fluid">
+      <nav className="container-fluid">
         <div className="row justify-content-between navbar">
-          <Categories categories={categories} />
+          <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
+            <nav className="container d-flex flex-row  justify-content-center align-items-center inline">
+              <div
+                className="m-2 "
+                onMouseEnter={() => setShowModal(true)}
+                onMouseLeave={() => setShowModal(false)}
+              >
+                {categoriesClassification.map((category) => (
+                  <Title categories={Object.keys(category)}></Title>
+                ))}
+              </div>
+            </nav>
+          </nav>
         </div>
-      </div>
+      </nav>
     </div>
-  );
-};
+    /* {showModal && (
+      <Modal subcategorias={Object.values(categories)}/> 
+      )} */
+  )
+}
 
-export default Navbar;
+export default Navbar
