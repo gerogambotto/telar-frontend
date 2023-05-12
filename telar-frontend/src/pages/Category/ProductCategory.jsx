@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout";
 import "./styles.scss";
 import axios from "axios";
-import { Card, Col, Container, Row } from "react-bootstrap";
-import { CListGroup } from "@coreui/react";
+import { Col, Container, Row } from "react-bootstrap";
 import RenderProducts from "../../components/RenderProducts/RenderProducts";
+
+
 const ProductsCategory = () => {
   const { category } = useParams();
   const [products, setProducts] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-
+  console.log(category)
   const getProducts = async () => {
     const res = await axios(
       `https://dummyjson.com/products/category/${category}`
@@ -21,6 +21,7 @@ const ProductsCategory = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <Layout>
       <Container className="container-category ">

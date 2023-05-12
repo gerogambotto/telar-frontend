@@ -5,25 +5,26 @@ import "./styles.scss";
 export const CarouselProducts = ({ categories , data }) => {
   return (
     <section className="carousel-section">
-      <div className="ml-3 row">
-        <h2>{categories}</h2>
-       {/*  <a href={`products/category/${categories}`} className="view">View More</a> */}
-      </div>
+      <div className='container'>
+        <div className="ml-3 row">
+          <a className='d-flex align-items-end categories-title' href={`products/category/${categories}`}>{categories}</a>
+        </div>
 
-      <div
-        className="mt-0"
-        style={{
-          maxWidth: 1200,
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: 64,
-        }}
-      >
-        <Carousel show={4} infiniteloop={true}>
-          {data.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
-          })}
-        </Carousel>
+        <div
+          className="m-0"
+          style={{
+            maxWidth: 1200,
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: 64,
+          }}
+        >
+          <Carousel show={4} infiniteloop={true}>
+            {data.map((product) => {
+              return <ProductCard key={product.id} product={product} />;
+            })}
+          </Carousel>
+        </div>
       </div>
     </section>
   );

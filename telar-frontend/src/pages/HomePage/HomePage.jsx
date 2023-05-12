@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
 import { CarouselProducts } from "../../components/CarouselProducts/CarouselProducts.jsx";
 import "./styles.scss";
+import categoriesClassification from '../../../categoriesClassification.json'
 
 export function HomePage() {
   const [products, setProducts] = useState(null);
@@ -16,20 +17,6 @@ export function HomePage() {
     getProduct();
   }, []);
 
-  const categoriesToFilter = [
-    {Electronics: ["smartphones", "laptops", "tablets"]},
-    {
-      Fashion: [
-        "womens-dresses",
-        "mens-shirts",
-        "mens-shoes",
-        "mens-watches",
-        "womens-watches",
-        "womens-bags",
-      ]
-    },
-    {Beauty: ["fragrances", "skincare"]}
-  ]
 
   const filterByCategories = (arrayOfFilters) => {
     const filteredProducts = [];
@@ -44,7 +31,7 @@ export function HomePage() {
   return (
     <Layout>
       <section className="home-section mt-5">
-        {categoriesToFilter.map((e) => (
+        {categoriesClassification.map((e) => (
           <CarouselProducts
             categories={Object.keys((e))}
             data={filterByCategories(Object.values(e)[0])}
