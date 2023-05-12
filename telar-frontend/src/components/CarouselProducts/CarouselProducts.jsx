@@ -10,19 +10,11 @@ export const CarouselProducts = ({ categories , data }) => {
           <a className='d-flex align-items-end categories-title' href={`products/category/${categories}`}>{categories}</a>
         </div>
 
-        <div
-          className="m-0"
-          style={{
-            maxWidth: 1200,
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginTop: 64,
-          }}
-        >
+        <div className="carousel-pre-container">
           <Carousel show={4} infiniteloop={true}>
-            {data.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
-            })}
+            {data.map((product) =>
+              <ProductCard key={product.id} product={product} />)
+            }
           </Carousel>
         </div>
       </div>

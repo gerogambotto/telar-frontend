@@ -11,7 +11,7 @@ $greendefault: #279d2e;
   transition: all 0.05s ease-in-out;
   justify-content: center;
   display: flex;
-  margin: 0 auto;
+  margin: auto 1rem;
 
   &:hover {
     transform: scale(1.1);
