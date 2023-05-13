@@ -1,10 +1,42 @@
 @import "../../styles/variables.scss";
-a {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: black;
-  .pepito{
-    color: blue;
+
+.categories-container{
+  display: flex;
+  margin: 0 1rem;
+
+  .sub-categories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    cursor: pointer;
+
+    h3{
+      text-transform: capitalize;
+      margin: 0 1rem;
+    }
   }
-  
+
+  .sub-categories-modal{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 10rem;
+    background-color: #3fa7e0;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sub-categories{
+      text-transform: capitalize;
+      margin: 0;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      height: 100%;
+    }
+    .sub-categories:hover{
+      background-color: red;
+    }
+  }
 }

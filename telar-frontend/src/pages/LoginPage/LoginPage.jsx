@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
-import "./style.scss";
+import "./styles.scss";
 
 export function LoginPage() {
   const useField = ({ type }) => {
@@ -39,7 +39,7 @@ export function LoginPage() {
 
   return (
     <Layout>
-      <section className="">
+      <section className="login-section">
         <div className="form-body-login">
           <form className="form-login" onSubmit={handleSubmit}>
             <div className="title">Login</div>

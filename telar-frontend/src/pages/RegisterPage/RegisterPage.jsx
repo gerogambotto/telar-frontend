@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout } from "../../components/Layout/Layout.jsx";
-import "./style.scss";
+import "./styles.scss";
 
 export function RegisterPage() {
   const useField = ({ type }) => {
@@ -52,7 +52,7 @@ export function RegisterPage() {
 
   return (
     <Layout>
-      <section className="">
+      <section className="register-section">
         <div className="form-body-register">
           <form className="form-register" onSubmit={handleSubmit}>
           <div className="title">Registration</div>
