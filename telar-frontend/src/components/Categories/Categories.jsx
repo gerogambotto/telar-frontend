@@ -1,40 +1,17 @@
-import { useState } from "react";
-import "./styles.scss";
-import { Col, Container, Row } from "react-bootstrap";
+import { useState } from "react"
+import "./styles.scss"
+import { Col, Container, Row } from "react-bootstrap"
+import categories from "../../../categoriesClassification.json"
+import Title from "./Title"
 
-function Categories({ categories }) {
-  const [showModal, setShowModal] = useState(false);
-  const categoriesToMap = [];
+function Categories() {
 
   return (
     <nav className="container d-flex flex-row  justify-content-center align-items-center inline ">
-      <nav className="container d-flex flex-row  justify-content-center align-items-center inline">
-        <a
-          className="m-2 "
-          href="/products/category/laptops"
-          onMouseEnter={() => setShowModal(true)}
-          onMouseLeave={() => setShowModal(false)}
-        >
-          Technology |
-        </a>
-        <div
-          className="m-2"
-          onMouseEnter={() => setShowModal(true)}
-          onMouseLeave={() => setShowModal(false)}
-        >
-          Clothes |
-        </div>
-        <div
-          className="m-2"
-          onMouseEnter={() => setShowModal(true)}
-          onMouseLeave={() => setShowModal(false)}
-        >
-          HealthCare
-        </div>
-        
-      </nav>
+        {categories.map((e) => (
+          <Title title={Object.keys(e)} key={Object.keys(e)} subcategories={Object.values(e)}/>
+        ))}
     </nav>
-  );
+  )
 }
-export default Categories;
-
+export default Categories

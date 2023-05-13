@@ -11,7 +11,7 @@ $greendefault: #279d2e;
   transition: all 0.05s ease-in-out;
   justify-content: center;
   display: flex;
-  margin: 0 auto;
+  margin: auto 1rem;
 
   &:hover {
     transform: scale(1.1);
@@ -41,7 +41,6 @@ $greendefault: #279d2e;
 
   .price-product {
     font-size: 28px;
-    font-weight: 700;
     line-height: 28px;
     color: $greendefault;
     font-weight: 500;

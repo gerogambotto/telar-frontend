@@ -1,1 +1,10 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  .pepito{
+    color: blue;
+  }
+  
+}
