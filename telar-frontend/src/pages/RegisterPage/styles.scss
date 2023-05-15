@@ -39,11 +39,11 @@
     height: 45px;
     margin: 45px 0;
   }
-
-  .register-button:hover {
-    background-color: $secondaryColor;
-    color: white;
+  .disabled-register-button{
+    
   }
+
+  
   .input__box {
     margin-bottom: 15px;
   }
