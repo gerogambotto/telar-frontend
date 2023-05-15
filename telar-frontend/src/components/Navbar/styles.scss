@@ -1,26 +1,37 @@
 @import '../../styles/variables';
 
 .navbar-section{
-  .navbar{
-    background-color: white;
+  background-color: white;
 
-    .loginregister {
+  .navbar-top{
+    padding-top: 2rem;
+
+    .login-register {
       display:flex;
       align-items: center;
       justify-content: flex-end;
-    }
 
-    .login-register-button{
-      cursor: pointer;
-      padding: 6px 16px;
-      background-color: white;
-      border: none;
-    }
+      .login-button,
+      .register-button{
+        cursor: pointer;
+        padding: 6px 16px;
+        border: none;
+        min-width: 100px;
+      }
 
-    .login-register-button:hover{
-      background-color: $primaryColor;
+      .register-button{
+        background-color: $primaryColor;
+      }
+
+      .login-button:hover{
+        background-color: $primaryColor;
+        transform: scale(1.1);
+      }
+      .register-button:hover{
+        background-color: $primaryColor;
+        transform: scale(1.1);
+      }
     }
   }
-
 }
 
