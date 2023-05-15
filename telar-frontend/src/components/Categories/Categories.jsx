@@ -19,10 +19,11 @@ function Categories({category}) {
         showSubCategories &&
         <div
           className='sub-categories-modal'
-          onMouseEnter={()=>setShowSubCategories(true)}
-          onMouseLeave={()=>setShowSubCategories(false)}
+            onMouseEnter={()=>setShowSubCategories(true)}
+            onMouseLeave={()=>setShowSubCategories(false)}
         >
-          {Object.values(category)[0].map(e => <h5 className='sub-categories'>{e}</h5>)}
+          {Object.values(category)[0].map(e => <a className='sub-categories' href={`/products/category/${e}`} >
+          {e}</a>)}
         </div>
       }
     </div>
