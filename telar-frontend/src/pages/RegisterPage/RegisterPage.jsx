@@ -1,52 +1,62 @@
-import React, { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Layout } from "../../components/Layout/Layout.jsx"
 import "./styles.scss"
 import { authGlobalState } from "../../context/authcontext/AuthContext.jsx"
 
 export function RegisterPage() {
+  const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
   const { register } = authGlobalState()
-  const [error, setError] = useState(null)
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-  })
-  const handleChange = (event) => {
-    const { name, value } = event.target
-
-    const newValues = {
-      ...values,
-      [name]: value,
-    }
-    if(validateField(name,value)){
-      setValues(newValues)
-    }
-  }
-
-  const validateField = (name, value) => {
-    function isValidEmail(userMail) {
-      return /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(userMail)
-    }
-
-    if (name === 'email' && !isValidEmail(value)) {
-      setError("Incorrect e-mail")
-    } else if (name === 'password' && value.length < 5) {
-      setError("Incorrect password")
-    /* } else if (name === 'confirmPassword' && value !== 'password') {
-      setError("Passwords don t match") */
-    } else setError(null)
-  }
+  const [mailError, setMailError] = useState(null)
+  const [passwordError, setPasswordError] = useState(null)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [rePassword, setRePassword] = useState("")
+  const [validPassword, SetValidPassword] = useState(false)
+  const [validEmail, setValidEmail] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-  
+    
     try {
-      register(values)
+      if(validEmail && validPassword){
+        await register({ email, password ,rePassword})
+      }
     } catch (error) {
-      console.error('Error de registro', error)
-      
+      console.error("Register error", error)
     }
   }
+
+  function isEmail(emailAdress) {
+    if (emailAdress.match(regex)) return true
+    else return false
+  }
+
+  useEffect(() => {
+    setValidEmail(isEmail(email))
+  }, [email])
+
+  useEffect(() => {
+    
+    if (validEmail) {
+      setMailError(null)
+    } else {
+      setMailError("Invalid email")
+    }
+  }, [validEmail])
+
+  useEffect(() => {
+    if (password !== rePassword) {
+      SetValidPassword(false)
+      setPasswordError("Passwords don't match")
+    } else if (password.length <= 4 || rePassword.length <= 4) {
+      SetValidPassword(false)
+      setPasswordError("Passwords must be at least 5 characters")
+    } else {
+      SetValidPassword(true)
+      setPasswordError(null)
+    }
+  }, [password, rePassword])
 
   return (
     <Layout>
@@ -58,9 +68,11 @@ export function RegisterPage() {
             <div className="input__box">
               <input
                 name="email"
-                values={values.email}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                }}
                 placeholder="Email"
-                onChange={handleChange}
+                type="email"
               />
             </div>
 
@@ -68,8 +80,10 @@ export function RegisterPage() {
               <input
                 name="password"
                 placeholder="Password"
-                values={values.password}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                }}
+                type="password"
               />
             </div>
 
@@ -77,14 +91,23 @@ export function RegisterPage() {
               <input
                 name="confirmPassword"
                 placeholder="Confirm Password"
-                values={values.confirmPassword}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setRePassword(e.target.value)
+                }}
+                type="password"
               />
             </div>
             <div>
-              <button disabled={error} className="register-button">Register</button>
+              <button disabled={!validEmail || !validPassword} className="register-button"> 
+                Register
+              </button>
 
-              {error && <h5 style={{ color: "red" }}>{error}</h5>}
+              {mailError && email.length !== 0 && (
+                <h5 style={{ color: "blue" }}>{mailError}</h5>  
+              )}
+              {passwordError && password.length !== 0 &&(
+                <h5 style={{ color: "red" }}>{passwordError}</h5>  
+              )}
             </div>
           </form>
         </div>

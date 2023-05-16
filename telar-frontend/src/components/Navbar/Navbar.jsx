@@ -60,7 +60,7 @@ export const Navbar = () => {
       </div>
       <div className="container-fluid">
         <div className="navbar-bottom d-flex justify-content-center align-items-center">
-          {categoriesClassification.map(e => <Categories category={e}/>)}
+          {categoriesClassification.map(e => <Categories category={e} key={e.id}/>)}
         </div>
       </div>
     </section>

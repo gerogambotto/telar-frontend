@@ -1,7 +1,7 @@
 import "./styles.scss"
 import {useState} from "react";
 
-function Categories({category}) {
+function Categories({category,key}) {
   const [showSubCategories, setShowSubCategories] = useState(false)
 
   return (
