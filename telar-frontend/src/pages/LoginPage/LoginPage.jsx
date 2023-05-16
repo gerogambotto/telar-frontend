@@ -15,12 +15,13 @@ export function LoginPage() {
   const [mailError, setMailError] = useState(null)
 
   const [validEmail, setValidEmail] = useState(false)
-  const [emailError, setEmailError] = useState(false)
 
   function isEmail(emailAdress) {
     if (emailAdress.match(regex)) return true
     else return false
   }
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -29,22 +30,27 @@ export function LoginPage() {
         await login(email, password)
       }
     } catch (error) {
-      console.error("Login error", error)
     }
   }
+
+
 
   useEffect(() => {
     setValidEmail(isEmail(email))
   }, [email])
 
+
+ 
   useEffect(() => {
-    
     if (validEmail) {
       setMailError(null)
     } else {
       setMailError("Invalid email")
     }
   }, [validEmail])
+
+
+
 
   useEffect(() => {
     if (password.length <= 4) {

@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useState } from "react"
 import { useContext } from "react"
 import { createContext } from "react"
@@ -13,18 +14,19 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const login = async (email, password) => {
-    await fetch("https://dummyjson.com/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: "atuny0",
-        password: "9uQFF1Lh",
-      }),
-    })
-      .then((res) => res.json())
-      .then(console.log)
-    console.log("logged")
+    const body = {
+      username: "atuny0",
+      password: "9uQFF1Lh",
+    }
+    const res = await axios.post("https://dummyjson.com/auth/login", body)
+    if (res.status === 200) {
+      localStorage.setItem("token", res.data.token)
+      setIsLoggedIn(true)
+    } else{
+      setIsLoggedIn(false)
+    }
   }
+
   const register = async (email, password, rePassword) => {
     await fetch("https://dummyjson.com/users/add", {
       method: "POST",
@@ -37,8 +39,7 @@ export const AuthProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then(console.log)
-      console.log('registered')
-      
+    console.log("registered")
   }
   const logout = () => {}
 
@@ -48,6 +49,7 @@ export const AuthProvider = ({ children }) => {
         login,
         register,
         logout,
+        isLoggedIn,
       }}
     >
       {children}
